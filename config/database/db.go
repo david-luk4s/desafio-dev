@@ -4,13 +4,16 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var (
-	DB  *sql.DB
-	err error
+	DB     *sql.DB
+	DBTest *sql.DB
+	err    error
 )
 
 func ConnectionDB() *sql.DB {
@@ -21,4 +24,18 @@ func ConnectionDB() *sql.DB {
 	}
 
 	return DB
+}
+
+func ConnectionDBTest() *sql.DB {
+	//remove test.db case exist
+	os.Remove("./test.db")
+
+	DBTest, err = sql.Open("sqlite3", "./test.db")
+	if err != nil {
+		fmt.Println(err)
+		log.Panic(err.Error())
+	}
+
+	AutoMigrate()
+	return DBTest
 }
