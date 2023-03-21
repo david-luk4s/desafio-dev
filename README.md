@@ -17,6 +17,17 @@ ou execute o programa com Compose standalone
 docker compose up
 ```
 
+### Teste Unitarios
+Com Docker Compose plugin:
+```
+docker-compose exec -it app go test -v
+```
+
+Com Docker Compose standalone:
+```
+docker compose exec -it app go test -v
+```
+
 ### Uso via navegador de sua preferência
 ```
 http://127.0.0.1:8080/
