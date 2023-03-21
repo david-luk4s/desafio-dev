@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Dev</title>
+    <style>.button {background-color: green;border: 2px solid #008CBA;color: #fff;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;}.button1 {padding: 10px 124px;}</style>
+</head>
+<body>
+    <h1 style="text-align: center;">Área de Importação</h1>
+    <div class="container" style="text-align: center;"><br>
+        <form action="/web/upload" method="POST" enctype="multipart/form-data">
+            <label for="myfile">Upload do arquivo CNAB:</label><br>
+            <input type="file" id="myfile" name="myfile"><br><br>
+            <input class="button button1" type="submit" value="Upload Arquivo" name="submit">
+        </form>
+        <br><br><a href="/">Voltar</a><br><br>
+    </div>
+    
+</body>
+</html>
